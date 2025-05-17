@@ -1,0 +1,164 @@
+[
+  {
+    "code": "CSCD618",
+    "title": "Deep Learning and Neural Networks",
+    "type": "Teaching",
+    "elective": true,
+    "day": "Friday",
+    "start": "17:00",
+    "end": "19:00"
+  },
+  {
+    "code": "CSCD612",
+    "title": "Intelligent Systems",
+    "type": "Teaching",
+    "elective": true,
+    "day": "Saturday",
+    "start": "08:00",
+    "end": "10:00"
+  },
+  {
+    "code": "CSCD604",
+    "title": "Distributed Systems",
+    "type": "Teaching",
+    "elective": false,
+    "day": "Saturday",
+    "start": "10:00",
+    "end": "12:00"
+  },
+  {
+    "code": "CSCD602",
+    "title": "Advanced Software Engineering",
+    "type": "Teaching",
+    "elective": false,
+    "day": "Saturday",
+    "start": "13:00",
+    "end": "15:00"
+  },
+  {
+    "code": "CSCD610",
+    "title": "Seminar I",
+    "type": "Teaching",
+    "elective": false,
+    "day": "Saturday",
+    "start": "15:00",
+    "end": "18:00"
+  },
+  {
+    "code": "CSCD614",
+    "title": "Wireless System Design",
+    "type": "Teaching",
+    "elective": true,
+    "day": "Sunday",
+    "start": "09:00",
+    "end": "11:00"
+  },
+  {
+    "code": "CSCD606",
+    "title": "Bioinformatics",
+    "type": "Teaching",
+    "elective": true,
+    "day": "Sunday",
+    "start": "11:00",
+    "end": "13:00"
+  },
+  {
+    "code": "CSCD616",
+    "title": "Information Systems Security",
+    "type": "Teaching",
+    "elective": false,
+    "day": "Sunday",
+    "start": "13:00",
+    "end": "15:00"
+  },
+  {
+    "code": "CSCD608",
+    "title": "Advanced Computer Vision",
+    "type": "Teaching",
+    "elective": true,
+    "day": "Sunday",
+    "start": "15:30",
+    "end": "17:30"
+  },
+  {
+    "code": "CSCD600",
+    "title": "MSc Project Supervision",
+    "type": "Teaching",
+    "elective": false,
+    "day": "Saturday",
+    "start": "18:00",
+    "end": "19:00"
+  },
+  {
+    "code": "CSCD612",
+    "title": "Intelligent Systems",
+    "type": "Lab",
+    "elective": true,
+    "day": "Saturday",
+    "start": "07:00",
+    "end": "08:00"
+  },
+  {
+    "code": "CSCD604",
+    "title": "Distributed Systems",
+    "type": "Lab",
+    "elective": false,
+    "day": "Saturday",
+    "start": "12:00",
+    "end": "13:00"
+  },
+  {
+    "code": "CSCD602",
+    "title": "Advanced Software Engineering",
+    "type": "Lab",
+    "elective": false,
+    "day": "Saturday",
+    "start": "15:00",
+    "end": "16:00"
+  },
+  {
+    "code": "CSCD614",
+    "title": "Wireless System Design",
+    "type": "Lab",
+    "elective": true,
+    "day": "Saturday",
+    "start": "18:00",
+    "end": "19:00"
+  },
+  {
+    "code": "CSCD608",
+    "title": "Advanced Computer Vision",
+    "type": "Lab",
+    "elective": true,
+    "day": "Sunday",
+    "start": "08:00",
+    "end": "09:00"
+  },
+  {
+    "code": "CSCD618",
+    "title": "Deep Learning and Neural Networks",
+    "type": "Lab",
+    "elective": true,
+    "day": "Sunday",
+    "start": "10:00",
+    "end": "11:00"
+  },
+  {
+    "code": "CSCD616",
+    "title": "Information Systems Security",
+    "type": "Lab",
+    "elective": false,
+    "day": "Sunday",
+    "start": "15:00",
+    "end": "16:00"
+  },
+  {
+    "code": "CSCD606",
+    "title": "Bioinformatics",
+    "type": "Lab",
+    "elective": true,
+    "day": "Sunday",
+    "start": "17:00",
+    "end": "18:00"
+  }
+]
