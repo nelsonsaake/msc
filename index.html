@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,14 +11,27 @@
       --md-sys-color-primary: #6750A4;
       --md-sys-color-on-surface: #1C1B1F;
       --md-sys-color-on-surface-variant: #605D66;
-      --md-sys-border-color: #D4D4D8; /* roughly tailwind stone-300 */
+      --md-sys-border-color: #D4D4D8;
+      /* roughly tailwind stone-300 */
       --md-sys-elevation-level1: 0px 1px 3px rgba(0, 0, 0, 0.12);
       --md-sys-elevation-hover: 0px 4px 8px rgba(0, 0, 0, 0.16);
-      --border-teaching: #3B82F6; /* Tailwind blue-500 */
-      --border-lab: #22C55E; /* Tailwind green-500 */
+      --border-teaching: #3B82F6;
+      /* Tailwind blue-500 */
+      --border-lab: #22C55E;
+      /* Tailwind green-500 */
     }
   </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8B3ZWZB8S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-W8B3ZWZB8S');
+</script>
+
 <body class="bg-cream-50 min-h-screen p-8 font-sans">
 
   <h1 class="text-3xl font-semibold mb-8 text-gray-900 select-text">Course Schedule</h1>
@@ -47,24 +61,24 @@
 
   <script>
     const data = [
-      {"code":"CSCD618","title":"Deep Learning and Neural Networks (Elective)","type":"T","day":"Friday","start":"17:00","end":"19:00"},
-      {"code":"CSCD612","title":"Intelligent Systems (Elective)","type":"T","day":"Saturday","start":"8:00","end":"10:00"},
-      {"code":"CSCD604","title":"Distributed Systems (Core)","type":"T","day":"Saturday","start":"10:00","end":"12:00"},
-      {"code":"CSCD602","title":"Advanced Software Engineering (Core)","type":"T","day":"Saturday","start":"13:00","end":"15:00"},
-      {"code":"CSCD610","title":"Seminar I","type":"T","day":"Saturday","start":"15:00","end":"18:00"},
-      {"code":"CSCD614","title":"Wireless System Design (Elective)","type":"T","day":"Sunday","start":"9:00","end":"11:00"},
-      {"code":"CSCD606","title":"Bioinformatics (Elective)","type":"T","day":"Sunday","start":"11:00","end":"13:00"},
-      {"code":"CSCD616","title":"Information Systems Security (Core)","type":"T","day":"Sunday","start":"13:00","end":"15:00"},
-      {"code":"CSCD608","title":"Advanced Computer Vision (Elective)","type":"T","day":"Sunday","start":"15:30","end":"17:30"},
-      {"code":"CSCD600","title":"MSc Project Supervision","type":"T","day":"Saturday","start":"18:00","end":"19:00"},
-      {"code":"CSCD612","title":"Intelligent Systems (Elective)","type":"L","day":"Saturday","start":"7:00","end":"8:00"},
-      {"code":"CSCD604","title":"Distributed Systems (Core)","type":"L","day":"Saturday","start":"12:00","end":"13:00"},
-      {"code":"CSCD602","title":"Advanced Software Engineering (Core)","type":"L","day":"Saturday","start":"15:00","end":"16:00"},
-      {"code":"CSCD614","title":"Wireless System Design (Elective)","type":"L","day":"Saturday","start":"18:00","end":"19:00"},
-      {"code":"CSCD608","title":"Advanced Computer Vision (Elective)","type":"L","day":"Sunday","start":"8:00","end":"9:00"},
-      {"code":"CSCD618","title":"Deep Learning and Neural Networks (Elective)","type":"L","day":"Sunday","start":"10:00","end":"11:00"},
-      {"code":"CSCD616","title":"Information Systems Security (Core)","type":"L","day":"Sunday","start":"15:00","end":"16:00"},
-      {"code":"CSCD606","title":"Bioinformatics (Elective)","type":"L","day":"Sunday","start":"17:00","end":"18:00"}
+      { "code": "CSCD618", "title": "Deep Learning and Neural Networks (Elective)", "type": "T", "day": "Friday", "start": "17:00", "end": "19:00" },
+      { "code": "CSCD612", "title": "Intelligent Systems (Elective)", "type": "T", "day": "Saturday", "start": "8:00", "end": "10:00" },
+      { "code": "CSCD604", "title": "Distributed Systems (Core)", "type": "T", "day": "Saturday", "start": "10:00", "end": "12:00" },
+      { "code": "CSCD602", "title": "Advanced Software Engineering (Core)", "type": "T", "day": "Saturday", "start": "13:00", "end": "15:00" },
+      { "code": "CSCD610", "title": "Seminar I", "type": "T", "day": "Saturday", "start": "15:00", "end": "18:00" },
+      { "code": "CSCD614", "title": "Wireless System Design (Elective)", "type": "T", "day": "Sunday", "start": "9:00", "end": "11:00" },
+      { "code": "CSCD606", "title": "Bioinformatics (Elective)", "type": "T", "day": "Sunday", "start": "11:00", "end": "13:00" },
+      { "code": "CSCD616", "title": "Information Systems Security (Core)", "type": "T", "day": "Sunday", "start": "13:00", "end": "15:00" },
+      { "code": "CSCD608", "title": "Advanced Computer Vision (Elective)", "type": "T", "day": "Sunday", "start": "15:30", "end": "17:30" },
+      { "code": "CSCD600", "title": "MSc Project Supervision", "type": "T", "day": "Saturday", "start": "18:00", "end": "19:00" },
+      { "code": "CSCD612", "title": "Intelligent Systems (Elective)", "type": "L", "day": "Saturday", "start": "7:00", "end": "8:00" },
+      { "code": "CSCD604", "title": "Distributed Systems (Core)", "type": "L", "day": "Saturday", "start": "12:00", "end": "13:00" },
+      { "code": "CSCD602", "title": "Advanced Software Engineering (Core)", "type": "L", "day": "Saturday", "start": "15:00", "end": "16:00" },
+      { "code": "CSCD614", "title": "Wireless System Design (Elective)", "type": "L", "day": "Saturday", "start": "18:00", "end": "19:00" },
+      { "code": "CSCD608", "title": "Advanced Computer Vision (Elective)", "type": "L", "day": "Sunday", "start": "8:00", "end": "9:00" },
+      { "code": "CSCD618", "title": "Deep Learning and Neural Networks (Elective)", "type": "L", "day": "Sunday", "start": "10:00", "end": "11:00" },
+      { "code": "CSCD616", "title": "Information Systems Security (Core)", "type": "L", "day": "Sunday", "start": "15:00", "end": "16:00" },
+      { "code": "CSCD606", "title": "Bioinformatics (Elective)", "type": "L", "day": "Sunday", "start": "17:00", "end": "18:00" }
     ];
 
     // Utility: Group by day
@@ -125,7 +139,7 @@
       tabTeaching.tabIndex = 0;
       tabTeaching.classList.add('border-blue-600', 'text-blue-700', 'font-semibold');
       tabTeaching.classList.remove('border-transparent', 'text-stone-500');
-      
+
       tabLab.setAttribute('aria-selected', 'false');
       tabLab.tabIndex = -1;
       tabLab.classList.remove('border-blue-600', 'text-blue-700', 'font-semibold');
@@ -152,4 +166,5 @@
 
   </script>
 </body>
+
 </html>
