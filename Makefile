@@ -10,4 +10,6 @@ dep:
 build:
 	cd msc
 #	npm run export
-	copy out ..\doc
+	rmdir /s /q ..\doc
+	xcopy out ..\doc /E /I /H /Y
+
