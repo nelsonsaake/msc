@@ -12,33 +12,19 @@
       --md-sys-color-on-surface: #1C1B1F;
       --md-sys-color-on-surface-variant: #605D66;
       --md-sys-border-color: #D4D4D8;
-      /* roughly tailwind stone-300 */
       --md-sys-elevation-level1: 0px 1px 3px rgba(0, 0, 0, 0.12);
       --md-sys-elevation-hover: 0px 4px 8px rgba(0, 0, 0, 0.16);
       --border-teaching: #3B82F6;
-      /* Tailwind blue-500 */
       --border-lab: #22C55E;
-      /* Tailwind green-500 */
     }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8B3ZWZB8S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
 
-  gtag('config', 'G-W8B3ZWZB8S');
-</script>
+<body class="bg-stone-50 min-h-screen p-8 font-sans">
+  <h1 class="text-3xl font-semibold mb-8 text-gray-900">Course Schedule</h1>
 
-<body class="bg-cream-50 min-h-screen p-8 font-sans">
-
-  <h1 class="text-3xl font-semibold mb-8 text-gray-900 select-text">Course Schedule</h1>
-
-  <!-- Tabs -->
   <div class="mb-8 border-b border-stone-300">
-    <nav class="flex space-x-4" aria-label="Tabs" role="tablist">
+    <nav class="flex space-x-4" role="tablist">
       <button id="tab-teaching" role="tab" aria-selected="true" aria-controls="panel-teaching" tabindex="0"
         class="py-2 px-4 border-b-4 border-blue-600 text-blue-700 font-semibold focus:outline-none">
         Teaching
@@ -50,13 +36,12 @@
     </nav>
   </div>
 
-  <!-- Panels -->
   <section id="panel-teaching" role="tabpanel" aria-labelledby="tab-teaching" class="">
-    <!-- Teaching content injected here -->
+    <!-- Teaching content will be rendered here -->
   </section>
 
   <section id="panel-lab" role="tabpanel" aria-labelledby="tab-lab" class="hidden">
-    <!-- Lab content injected here -->
+    <!-- Lab content will be rendered here -->
   </section>
 
   <script>
@@ -81,90 +66,43 @@
       { "code": "CSCD606", "title": "Bioinformatics (Elective)", "type": "L", "day": "Sunday", "start": "17:00", "end": "18:00" }
     ];
 
-
-    // Utility: Group by day
-    function groupByDay(arr) {
-      return arr.reduce((acc, cur) => {
-        if (!acc[cur.day]) acc[cur.day] = [];
-        acc[cur.day].push(cur);
-        return acc;
-      }, {});
-    }
-
-    // Render cards for a day group
-    function renderDayGroup(day, courses, type) {
-      const borderColor = type === 'T' ? 'var(--border-teaching)' : 'var(--border-lab)';
-      return `
-        <section class="mb-8">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4 select-text">${day}</h2>
-          <div class="flex flex-wrap gap-6">
-            ${courses.map(course => `
-              <article
-                class="bg-white rounded-[24px] p-6 w-full md:w-[300px] flex flex-col shadow-[var(--md-sys-elevation-level1)] hover:shadow-[var(--md-sys-elevation-hover)] transition-shadow cursor-default border border-stone-400"
-                style="border-left: 6px solid ${borderColor};"
-              >
-                <div class="flex justify-between mb-1">
-                  <span class="text-sm font-medium select-text text-gray-500">${course.code}</span>
-                  <span class="text-sm font-semibold select-text" style="color: ${borderColor};">
-                    ${type === 'T' ? 'Teaching' : 'Lab'}
-                  </span>
-                </div>
-                <p class="text-base font-semibold mb-4 select-text text-gray-900 leading-tight">${course.title}</p>
-                <p class="text-sm font-medium select-text text-gray-500">${course.start} – ${course.end}</p>
-              </article>
-            `).join('')}
+    const renderSchedule = (type) => {
+      return data.filter(d => d.type === type)
+        .map(d => `
+          <div class="border-l-4 pl-4 py-2 mb-2 ${type === 'T' ? 'border-blue-500 bg-white' : 'border-green-500 bg-white'} shadow-sm rounded">
+            <div class="text-sm font-medium text-gray-900">${d.code}: ${d.title}</div>
+            <div class="text-xs text-gray-500">${d.day} ${d.start} - ${d.end}</div>
           </div>
-        </section>
-      `;
-    }
+        `).join('');
+    };
 
-    // Render all for given type
-    function renderType(type) {
-      const filtered = data.filter(c => c.type === type);
-      const grouped = groupByDay(filtered);
-      return Object.entries(grouped).map(([day, courses]) => renderDayGroup(day, courses, type)).join('');
-    }
+    document.getElementById('panel-teaching').innerHTML = renderSchedule('T');
+    document.getElementById('panel-lab').innerHTML = renderSchedule('L');
 
-    // Populate panels
-    document.getElementById('panel-teaching').innerHTML = renderType('T');
-    document.getElementById('panel-lab').innerHTML = renderType('L');
-
-    // Tab behavior
     const tabTeaching = document.getElementById('tab-teaching');
     const tabLab = document.getElementById('tab-lab');
     const panelTeaching = document.getElementById('panel-teaching');
     const panelLab = document.getElementById('panel-lab');
 
     tabTeaching.addEventListener('click', () => {
-      tabTeaching.setAttribute('aria-selected', 'true');
-      tabTeaching.tabIndex = 0;
-      tabTeaching.classList.add('border-blue-600', 'text-blue-700', 'font-semibold');
-      tabTeaching.classList.remove('border-transparent', 'text-stone-500');
-
-      tabLab.setAttribute('aria-selected', 'false');
-      tabLab.tabIndex = -1;
-      tabLab.classList.remove('border-blue-600', 'text-blue-700', 'font-semibold');
-      tabLab.classList.add('border-transparent', 'text-stone-500');
+      tabTeaching.classList.add('border-blue-600', 'text-blue-700');
+      tabTeaching.classList.remove('text-stone-500');
+      tabLab.classList.remove('border-green-600', 'text-green-700');
+      tabLab.classList.add('text-stone-500');
 
       panelTeaching.classList.remove('hidden');
       panelLab.classList.add('hidden');
     });
 
     tabLab.addEventListener('click', () => {
-      tabLab.setAttribute('aria-selected', 'true');
-      tabLab.tabIndex = 0;
-      tabLab.classList.add('border-blue-600', 'text-blue-700', 'font-semibold');
-      tabLab.classList.remove('border-transparent', 'text-stone-500');
+      tabLab.classList.add('border-green-600', 'text-green-700');
+      tabLab.classList.remove('text-stone-500');
+      tabTeaching.classList.remove('border-blue-600', 'text-blue-700');
+      tabTeaching.classList.add('text-stone-500');
 
-      tabTeaching.setAttribute('aria-selected', 'false');
-      tabTeaching.tabIndex = -1;
-      tabTeaching.classList.remove('border-blue-600', 'text-blue-700', 'font-semibold');
-      tabTeaching.classList.add('border-transparent', 'text-stone-500');
-
-      panelLab.classList.remove('hidden');
       panelTeaching.classList.add('hidden');
+      panelLab.classList.remove('hidden');
     });
-
   </script>
 </body>
 
