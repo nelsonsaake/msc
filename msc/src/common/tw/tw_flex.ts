@@ -1,0 +1,17 @@
+export const twFlex: Record<string, React.CSSProperties> = {
+  'flex': { display: 'flex' },
+  'flex-row': { flexDirection: 'row' },
+  'flex-col': { flexDirection: 'column' },
+  'flex-1': { flex: 1 },
+  'justify-start': { justifyContent: 'flex-start' },
+  'justify-center': { justifyContent: 'center' },
+  'justify-end': { justifyContent: 'flex-end' },
+  'justify-between': { justifyContent: 'space-between' },
+  'justify-around': { justifyContent: 'space-around' },
+  'justify-evenly': { justifyContent: 'space-evenly' },
+  'items-start': { alignItems: 'flex-start' },
+  'items-center': { alignItems: 'center' },
+  'items-end': { alignItems: 'flex-end' },
+  'items-baseline': { alignItems: 'baseline' },
+  'items-stretch': { alignItems: 'stretch' },
+}
